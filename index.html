@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cash For Kit - Best Prices Paid for IT Equipment</title>
-    <meta name="description" content="We buy enterprise IT equipment - servers, storage arrays, networking, components and more. Get instant quotes for your surplus IT hardware.">
-    <meta name="keywords" content="sell IT equipment, buy servers, enterprise hardware, IT asset disposal, surplus IT equipment, used servers UK">
-    <meta property="og:title" content="Cash For Kit - We Buy Enterprise IT Equipment">
-    <meta property="og:description" content="Turn your excess IT inventory into immediate capital. Best prices paid for surplus or unwanted IT equipment.">
+    <title>Cash For Kit - Best Prices for Server RAM | DDR4 & DDR5</title>
+    <meta name="description" content="We buy DDR4 and DDR5 server RAM at the best prices in the UK. Get instant quotes for your surplus server memory modules.">
+    <meta name="keywords" content="sell server RAM, buy DDR4, buy DDR5, server memory, enterprise RAM, surplus IT equipment, used servers UK">
+    <meta property="og:title" content="Cash For Kit - Now Buying DDR4 & DDR5 Server RAM">
+    <meta property="og:description" content="Best prices paid for surplus server RAM. DDR4 and DDR5 modules purchased at competitive rates.">
     <meta property="og:image" content="logo.png">
     <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         /* CSS Reset & Base Styles */
         *, *::before, *::after {
@@ -32,6 +32,11 @@
             --bg-blue-light: #ebf8ff;
             --border-color: #e2e8f0;
             --white: #ffffff;
+            --ticker-bg: #0a0e17;
+            --ticker-green: #00d4aa;
+            --ticker-text: #e2e8f0;
+            --ddr4-color: #3b82f6;
+            --ddr5-color: #8b5cf6;
         }
 
         html {
@@ -127,67 +132,328 @@
             font-size: 1rem;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 4rem 1rem 3rem;
-            background: linear-gradient(180deg, var(--bg-blue-light) 0%, var(--white) 100%);
+        /* RAM Hero Section */
+        .ram-hero {
+            background: linear-gradient(135deg, #0a0e17 0%, #1a1f35 50%, #0d1525 100%);
+            padding: 3rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ram-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
+            position: relative;
+            z-index: 1;
         }
 
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .hero-text {
+        .ram-hero-content {
             text-align: center;
-            max-width: 600px;
         }
 
-        .hero-text h1 {
-            font-size: 2.5rem;
-            color: var(--primary);
+        .ram-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(0, 212, 170, 0.15);
+            border: 1px solid var(--ticker-green);
+            color: var(--ticker-green);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            animation: pulse-glow 2s ease-in-out infinite;
         }
 
-        .hero-text p {
+        .ram-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--ticker-green);
+            border-radius: 50%;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 170, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(0, 212, 170, 0.5); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .ram-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .ram-hero h1 span {
+            background: linear-gradient(90deg, var(--ddr4-color), var(--ddr5-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ram-hero-subtitle {
             font-size: 1.25rem;
-            color: var(--text-gray);
+            color: var(--ticker-text);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Live Ticker Section */
+        .ticker-section {
+            background: var(--ticker-bg);
+            padding: 2rem 1rem 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .ticker-header {
+            text-align: center;
             margin-bottom: 2rem;
         }
 
-        .hero-icons {
+        .ticker-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--ticker-green);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .ticker-title::before,
+        .ticker-title::after {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--ticker-green));
+        }
+
+        .ticker-title::after {
+            background: linear-gradient(90deg, var(--ticker-green), transparent);
+        }
+
+        .ticker-main-title {
+            font-size: 1.75rem;
+            color: var(--white);
+            font-weight: 800;
+        }
+
+        .price-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 2rem;
-            padding: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .hero-icon {
-            animation: float 3s ease-in-out infinite;
+        .price-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .hero-icon:nth-child(2) { animation-delay: 0.2s; }
-        .hero-icon:nth-child(3) { animation-delay: 0.4s; }
-        .hero-icon:nth-child(4) { animation-delay: 0.6s; }
-
-        .hero-icon svg {
-            width: 80px;
-            height: 80px;
-            color: var(--primary);
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .price-card.ddr4::before {
+            background: linear-gradient(90deg, var(--ddr4-color), #60a5fa);
+        }
+
+        .price-card.ddr5::before {
+            background: linear-gradient(90deg, var(--ddr5-color), #a78bfa);
+        }
+
+        .price-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .price-card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .price-card.ddr4 .price-card-title {
+            color: var(--ddr4-color);
+        }
+
+        .price-card.ddr5 .price-card-title {
+            color: var(--ddr5-color);
+        }
+
+        .price-card-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-card.ddr4 .price-card-badge {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--ddr4-color);
+            border: 1px solid var(--ddr4-color);
+        }
+
+        .price-card.ddr5 .price-card-badge {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--ddr5-color);
+            border: 1px solid var(--ddr5-color);
+        }
+
+        .speed-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .speed-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .speed-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--ticker-green);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .speed-label::before {
+            content: '●';
+            font-size: 0.5rem;
+        }
+
+        .price-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .price-row:hover {
+            background: rgba(0,0,0,0.5);
+            transform: translateX(4px);
+        }
+
+        .price-capacity {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--ticker-text);
+            font-size: 0.95rem;
+        }
+
+        .price-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--ticker-green);
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price-value.flash-up {
+            animation: flashUp 0.5s ease;
+        }
+
+        .price-value.flash-down {
+            animation: flashDown 0.5s ease;
+        }
+
+        .price-arrow {
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .price-arrow.up {
+            color: #00d4aa;
+            opacity: 1;
+        }
+
+        .price-arrow.down {
+            color: #ff4757;
+            opacity: 1;
+        }
+
+        @keyframes flashUp {
+            0% { background: transparent; }
+            50% { background: rgba(0, 212, 170, 0.3); color: #00ffcc; }
+            100% { background: transparent; }
+        }
+
+        @keyframes flashDown {
+            0% { background: transparent; }
+            50% { background: rgba(255, 71, 87, 0.3); color: #ff6b7a; }
+            100% { background: transparent; }
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            transition: all 0.2s ease, background-color 0.5s ease;
+        }
+
+        .ticker-footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .ticker-note {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
         }
 
         /* Services Section */
@@ -336,6 +602,14 @@
             width: 100%;
         }
 
+        /* HubSpot Form Styling */
+        .hubspot-form {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
         /* Footer */
         .footer {
             background: var(--primary);
@@ -354,6 +628,7 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
@@ -376,33 +651,24 @@
                 font-size: 1.5rem;
             }
 
-            .hero {
-                padding: 6rem 2rem 5rem;
+            .ram-hero {
+                padding: 4rem 2rem;
             }
 
-            .hero-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
+            .ram-hero h1 {
+                font-size: 3.5rem;
             }
 
-            .hero-text {
-                text-align: left;
-                flex: 1;
+            .ticker-section {
+                padding: 3rem 2rem 4rem;
             }
 
-            .hero-text h1 {
-                font-size: 3rem;
+            .ticker-main-title {
+                font-size: 2rem;
             }
 
-            .hero-icons {
-                flex: 1;
-                justify-content: center;
-            }
-
-            .hero-icon svg {
-                width: 96px;
-                height: 96px;
+            .price-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .section-header h2 {
@@ -415,17 +681,12 @@
         }
 
         @media (min-width: 1024px) {
-            .hero-text h1 {
-                font-size: 3.5rem;
+            .ram-hero h1 {
+                font-size: 4rem;
             }
 
-            .hero-icons {
-                gap: 3rem;
-            }
-
-            .hero-icon svg {
-                width: 112px;
-                height: 112px;
+            .price-card {
+                padding: 2rem;
             }
         }
 
@@ -448,8 +709,36 @@
             color: #9b2c2c;
             display: block;
         }
+
+        /* Scrolling ticker animation */
+        .ticker-scroll {
+            background: rgba(0, 212, 170, 0.1);
+            border-top: 1px solid rgba(0, 212, 170, 0.3);
+            border-bottom: 1px solid rgba(0, 212, 170, 0.3);
+            padding: 0.75rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-scroll-content {
+            display: inline-block;
+            animation: scroll-left 30s linear infinite;
+        }
+
+        .ticker-scroll-content span {
+            display: inline-block;
+            padding: 0 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--ticker-green);
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
     </style>
-  </head>
+</head>
 <body>
     <!-- Top Banner -->
     <header class="top-banner">
@@ -460,41 +749,143 @@
         <a href="#contact" class="btn btn-white">Get Quote</a>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- RAM Hero Section -->
+    <section class="ram-hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>We Buy Enterprise IT Equipment</h1>
-                    <p>Turn your excess IT inventory into immediate capital. We purchase servers, storage arrays, network equipment, and more.</p>
-                    <a href="#contact" class="btn btn-secondary btn-large">Get an Instant Quote</a>
+            <div class="ram-hero-content">
+                <div class="ram-badge">Currently Purchasing</div>
+                <h1>Now Buying <span>DDR4 & DDR5</span><br>Server RAM</h1>
+                <p class="ram-hero-subtitle">Top prices paid for enterprise server memory modules</p>
+                <a href="#contact" class="btn btn-secondary btn-large">Get an Instant Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Ticker -->
+    <div class="ticker-scroll">
+        <div class="ticker-scroll-content">
+            <span>DDR4 16GB £12.60+</span>
+            <span>DDR4 32GB £26.00+</span>
+            <span>DDR4 64GB £55.00+</span>
+            <span>DDR4 128GB £112.00+</span>
+            <span>DDR5 16GB £48.00</span>
+            <span>DDR5 32GB £102.00</span>
+            <span>DDR5 64GB £208.00</span>
+            <span>DDR5 128GB £440.00</span>
+            <span>DDR4 16GB £12.60+</span>
+            <span>DDR4 32GB £26.00+</span>
+            <span>DDR4 64GB £55.00+</span>
+            <span>DDR4 128GB £112.00+</span>
+            <span>DDR5 16GB £48.00</span>
+            <span>DDR5 32GB £102.00</span>
+            <span>DDR5 64GB £208.00</span>
+            <span>DDR5 128GB £440.00</span>
+        </div>
+    </div>
+
+    <!-- Live Prices Section -->
+    <section class="ticker-section">
+        <div class="container">
+            <div class="ticker-header">
+                <div class="ticker-title">Live Prices</div>
+                <h2 class="ticker-main-title">Today's Live Purchase Prices</h2>
+            </div>
+
+            <div class="price-grid">
+                <!-- DDR4 Card -->
+                <div class="price-card ddr4">
+                    <div class="price-card-header">
+                        <h3 class="price-card-title">DDR4 RAM</h3>
+                        <span class="price-card-badge">Server Memory</span>
+                    </div>
+
+                    <div class="speed-group">
+                        <div class="speed-label">2133 / 2400 / 2666 MHz</div>
+                        <div class="price-rows">
+                            <div class="price-row">
+                                <span class="price-capacity">16GB Module</span>
+                                <span class="price-value" data-base-price="12.60"><span class="price-arrow">▲</span>£12.60</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">32GB Module</span>
+                                <span class="price-value" data-base-price="26.00"><span class="price-arrow">▲</span>£26.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">64GB Module</span>
+                                <span class="price-value" data-base-price="55.00"><span class="price-arrow">▲</span>£55.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">128GB Module</span>
+                                <span class="price-value" data-base-price="112.00"><span class="price-arrow">▲</span>£112.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="speed-group">
+                        <div class="speed-label">2933 / 3200 MHz</div>
+                        <div class="price-rows">
+                            <div class="price-row">
+                                <span class="price-capacity">16GB Module</span>
+                                <span class="price-value" data-base-price="18.00"><span class="price-arrow">▲</span>£18.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">32GB Module</span>
+                                <span class="price-value" data-base-price="36.00"><span class="price-arrow">▲</span>£36.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">64GB Module</span>
+                                <span class="price-value" data-base-price="74.00"><span class="price-arrow">▲</span>£74.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">128GB Module</span>
+                                <span class="price-value" data-base-price="152.00"><span class="price-arrow">▲</span>£152.00</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-icons">
-                    <div class="hero-icon">
-                        <!-- Server Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z" />
-                        </svg>
+
+                <!-- DDR5 Card -->
+                <div class="price-card ddr5">
+                    <div class="price-card-header">
+                        <h3 class="price-card-title">DDR5 RAM</h3>
+                        <span class="price-card-badge">Server Memory</span>
                     </div>
-                    <div class="hero-icon">
-                        <!-- Hard Drive Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25M3.75 17.25h.008v.008h-.008v-.008zm3 0h.008v.008h-.008v-.008zm3 0h.008v.008h-.008v-.008z" />
-                        </svg>
-                    </div>
-                    <div class="hero-icon">
-                        <!-- CPU Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3M21 8.25h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3M21 15.75h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
-                        </svg>
-                    </div>
-                    <div class="hero-icon">
-                        <!-- Database Icon -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-                        </svg>
+
+                    <div class="speed-group">
+                        <div class="speed-label">All Speeds</div>
+                        <div class="price-rows">
+                            <div class="price-row">
+                                <span class="price-capacity">16GB Module</span>
+                                <span class="price-value" data-base-price="48.00"><span class="price-arrow">▲</span>£48.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">32GB Module</span>
+                                <span class="price-value" data-base-price="102.00"><span class="price-arrow">▲</span>£102.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">64GB Module</span>
+                                <span class="price-value" data-base-price="208.00"><span class="price-arrow">▲</span>£208.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">96GB Module</span>
+                                <span class="price-value" data-base-price="310.00"><span class="price-arrow">▲</span>£310.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">128GB Module</span>
+                                <span class="price-value" data-base-price="440.00"><span class="price-arrow">▲</span>£440.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="price-capacity">256GB Module</span>
+                                <span class="price-value" data-base-price="900.00"><span class="price-arrow">▲</span>£900.00</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="ticker-footer">
+                <p class="ticker-note">Prices are per module. Bulk quantities may attract higher rates. Contact us for a custom quote.</p>
+                <a href="#contact" class="btn btn-secondary btn-large">Get Your Quote Now</a>
             </div>
         </div>
     </section>
@@ -503,8 +894,8 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Equipment We Purchase</h2>
-                <p>We buy a wide range of enterprise IT equipment</p>
+                <h2>We Also Purchase</h2>
+                <p>A wide range of enterprise IT equipment</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
@@ -512,14 +903,14 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z" />
                     </svg>
                     <h3>Servers</h3>
-                    <p>Enterprise servers from all major manufacturers including Dell, HP, Cisco, and more.</p>
+                    <p>Enterprise servers from Dell, HP, Cisco, Lenovo and more.</p>
                 </div>
                 <div class="service-card">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25M3.75 17.25h.008v.008h-.008v-.008zm3 0h.008v.008h-.008v-.008zm3 0h.008v.008h-.008v-.008z" />
                     </svg>
                     <h3>Storage Arrays</h3>
-                    <p>SAN, NAS, and enterprise storage solutions from leading vendors.</p>
+                    <p>SAN, NAS, and enterprise storage solutions.</p>
                 </div>
                 <div class="service-card">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -532,22 +923,22 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3v1.5M4.5 8.25H3M21 8.25h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3M21 15.75h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
                     </svg>
-                    <h3>Components</h3>
-                    <p>CPUs, memory, GPUs, and server components.</p>
+                    <h3>CPUs & Processors</h3>
+                    <p>Intel Xeon, AMD EPYC and other server processors.</p>
                 </div>
                 <div class="service-card">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
                     </svg>
-                    <h3>Storage Media</h3>
-                    <p>SSDs, HDDs, and enterprise storage media.</p>
+                    <h3>SSDs & HDDs</h3>
+                    <p>Enterprise storage media and drives.</p>
                 </div>
                 <div class="service-card">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
                     </svg>
-                    <h3>Network Cards</h3>
-                    <p>Network adapters, HBAs, and interface cards.</p>
+                    <h3>GPUs & Accelerators</h3>
+                    <p>NVIDIA, AMD and other compute accelerators.</p>
                 </div>
             </div>
         </div>
@@ -577,7 +968,7 @@
                         </svg>
                         <div>
                             <h3>Call Us</h3>
-                            <p><a href="tel:+441onal536274950">+44 (0) 1536 274950</a></p>
+                            <p><a href="tel:+441536274950">+44 (0) 1536 274950</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -591,14 +982,16 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
-                    <div id="formMessage" class="form-message"></div>
-                    <input type="text" name="name" class="form-input" placeholder="Your Name" required>
-                    <input type="email" name="email" class="form-input" placeholder="Your Email" required>
-                    <input type="text" name="company" class="form-input" placeholder="Company Name">
-                    <textarea name="message" class="form-textarea" placeholder="Tell us about your equipment (model numbers, quantities, condition, etc.)" required></textarea>
-                    <button type="submit" class="btn btn-secondary">Send Message</button>
-                </form>
+                <div class="hubspot-form">
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                        hbspt.forms.create({
+                            portalId: "20213111",
+                            formId: "a20a0898-a561-4fee-8372-6cb81c73a93e",
+                            region: "na1"
+                        });
+                    </script>
+                </div>
             </div>
         </div>
     </section>
@@ -615,53 +1008,6 @@
     </footer>
 
     <script>
-        // Simple form handling - you can replace with your own backend
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = this;
-            const formData = new FormData(form);
-            const formMessage = document.getElementById('formMessage');
-            
-            // For now, just show a success message
-            // To make this work, you'll need to:
-            // 1. Use a service like Formspree (https://formspree.io) - replace the form action URL
-            // 2. Or set up your own backend endpoint
-            
-            formMessage.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
-            formMessage.className = 'form-message success';
-            form.reset();
-            
-            // Hide message after 5 seconds
-            setTimeout(() => {
-                formMessage.className = 'form-message';
-            }, 5000);
-            
-            /*
-            // Uncomment this for actual form submission with Formspree or similar:
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    formMessage.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
-                    formMessage.className = 'form-message success';
-                    form.reset();
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                formMessage.textContent = 'Oops! Something went wrong. Please email us directly.';
-                formMessage.className = 'form-message error';
-            });
-            */
-        });
-
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -675,6 +1021,100 @@
                 }
             });
         });
+
+        // Live Price Ticker - Stock Market Effect
+        (function() {
+            const priceElements = document.querySelectorAll('.price-value[data-base-price]');
+            const currentPrices = new Map();
+
+            // Initialize current prices from base prices
+            priceElements.forEach(el => {
+                const basePrice = parseFloat(el.dataset.basePrice);
+                currentPrices.set(el, basePrice);
+            });
+
+            function updateRandomPrice() {
+                // Select a random price element to update
+                const elements = Array.from(priceElements);
+                const randomIndex = Math.floor(Math.random() * elements.length);
+                const element = elements[randomIndex];
+                const basePrice = parseFloat(element.dataset.basePrice);
+                const currentPrice = currentPrices.get(element);
+
+                // Generate random percentage change (-5% to +5%)
+                const maxChange = 0.05; // 5%
+                const randomChange = (Math.random() * 2 - 1) * maxChange; // -5% to +5%
+                
+                // Calculate new price from base price with the random fluctuation
+                let newPrice = basePrice * (1 + randomChange);
+                
+                // Ensure price stays within 5% of base price
+                const minPrice = basePrice * 0.95;
+                const maxPrice = basePrice * 1.05;
+                newPrice = Math.max(minPrice, Math.min(maxPrice, newPrice));
+                
+                // Round to 2 decimal places
+                newPrice = Math.round(newPrice * 100) / 100;
+
+                // Determine direction
+                const direction = newPrice > currentPrice ? 'up' : newPrice < currentPrice ? 'down' : null;
+
+                if (direction) {
+                    // Update the price display
+                    const arrow = element.querySelector('.price-arrow');
+                    
+                    // Remove existing classes
+                    element.classList.remove('flash-up', 'flash-down');
+                    arrow.classList.remove('up', 'down');
+                    
+                    // Trigger reflow to restart animation
+                    void element.offsetWidth;
+                    
+                    // Add new classes
+                    if (direction === 'up') {
+                        element.classList.add('flash-up');
+                        arrow.classList.add('up');
+                        arrow.textContent = '▲';
+                    } else {
+                        element.classList.add('flash-down');
+                        arrow.classList.add('down');
+                        arrow.textContent = '▼';
+                    }
+
+                    // Update price text (keep arrow, update price)
+                    const priceText = '£' + newPrice.toFixed(2);
+                    element.childNodes[1].textContent = priceText;
+
+                    // Store new current price
+                    currentPrices.set(element, newPrice);
+
+                    // Hide arrow after a delay
+                    setTimeout(() => {
+                        arrow.classList.remove('up', 'down');
+                    }, 2000);
+                }
+            }
+
+            // Update prices at random intervals (between 500ms and 2000ms)
+            function scheduleNextUpdate() {
+                const delay = Math.random() * 1500 + 500; // 500ms to 2000ms
+                setTimeout(() => {
+                    updateRandomPrice();
+                    scheduleNextUpdate();
+                }, delay);
+            }
+
+            // Start the ticker
+            scheduleNextUpdate();
+
+            // Also update multiple prices periodically for more activity
+            setInterval(() => {
+                const numUpdates = Math.floor(Math.random() * 3) + 1; // 1-3 updates
+                for (let i = 0; i < numUpdates; i++) {
+                    setTimeout(() => updateRandomPrice(), i * 200);
+                }
+            }, 3000);
+        })();
     </script>
-  </body>
+</body>
 </html>
