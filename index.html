@@ -322,10 +322,11 @@
 
         .ram-hero-content {
             text-align: center;
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
+            padding: 0 0.5rem;
         }
 
         .ram-badge {
@@ -356,6 +357,15 @@
             line-height: 1.1;
             letter-spacing: -1px;
             text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            white-space: normal;
+            max-width: 100%;
+            width: 100%;
+            word-wrap: normal;
+            overflow-wrap: normal;
+        }
+        
+        .ram-hero h1 br {
+            display: block;
         }
 
         .ram-hero h1 .highlight {
@@ -1083,13 +1093,29 @@
         .footer {
             background: var(--accent-orange);
             color: var(--white);
-            padding: 2rem 1rem;
+            padding: 2rem 1rem 2rem 0;
+        }
+
+        .footer .container {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem 0 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+            flex: 1;
         }
 
         .footer p {
             opacity: 0.9;
             font-size: 0.875rem;
+            margin: 0;
         }
 
         .footer-links {
@@ -1110,6 +1136,39 @@
             opacity: 1;
         }
 
+        .footer-logo {
+            display: block;
+            flex-shrink: 0;
+            margin-left: -4rem;
+        }
+
+        .footer-logo img {
+            max-height: 80px;
+            width: auto;
+            opacity: 0.95;
+            transition: opacity 0.2s;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .footer .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+        }
+
         /* Responsive Design */
         @media (min-width: 768px) {
             .top-banner {
@@ -1122,6 +1181,10 @@
 
             .ram-hero {
                 padding: 8rem 2rem 6rem;
+            }
+
+            .ram-hero-content {
+                max-width: 1200px;
             }
 
             .ram-hero h1 {
@@ -1151,6 +1214,10 @@
         }
 
         @media (min-width: 1024px) {
+            .ram-hero-content {
+                max-width: 1300px;
+            }
+
             .ram-hero h1 {
                 font-size: 4.5rem;
             }
@@ -1228,116 +1295,91 @@
         <div class="container">
             <div class="ram-hero-content">
                 <div class="ram-badge">Currently Purchasing</div>
-                <h1>We're Buying <span class="highlight">DDR4 & DDR5</span> Server RAM</h1>
-                <p class="ram-hero-subtitle">Get top prices for your enterprise server memory modules. Instant quotes, fast payment, trusted service.</p>
-                <a href="#contact" class="btn btn-secondary btn-large">Get an Instant Quote</a>
+                <h1>We Pay <span class="highlight">Top Prices</span> for<br><span class="highlight">DDR4 & DDR5</span> Server RAM</h1>
+                <p class="ram-hero-subtitle">Get the best prices for your enterprise server memory modules. Instant quotes, fast payment, trusted service.</p>
             </div>
         </div>
     </section>
 
-    <!-- Live Prices Section -->
+    <!-- DDR4 & DDR5 Information Section -->
     <section class="ticker-section">
         <div class="container">
-            <div class="ticker-header">
-                <div class="ticker-title">Live Prices</div>
-                <h2 class="ticker-main-title">Today's Live Purchase Prices</h2>
-            </div>
-
             <div class="price-grid">
-                <!-- DDR4 Card -->
+                <!-- DDR4 Information Card -->
                 <div class="price-card ddr4">
                     <div class="price-card-header">
                         <h3 class="price-card-title">DDR4 RAM</h3>
                         <span class="price-card-badge">Server Memory</span>
                     </div>
-
-                    <div class="speed-group">
-                        <div class="speed-label">2133 / 2400 / 2666 MHz</div>
-                        <div class="price-rows">
-                            <div class="price-row">
-                                <span class="price-capacity">16GB Module</span>
-                                <span class="price-value" data-base-price="12.60"><span class="price-arrow">▲</span>£12.60</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">32GB Module</span>
-                                <span class="price-value" data-base-price="26.00"><span class="price-arrow">▲</span>£26.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">64GB Module</span>
-                                <span class="price-value" data-base-price="55.00"><span class="price-arrow">▲</span>£55.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">128GB Module</span>
-                                <span class="price-value" data-base-price="112.00"><span class="price-arrow">▲</span>£112.00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="speed-group">
-                        <div class="speed-label">2933 / 3200 MHz</div>
-                        <div class="price-rows">
-                            <div class="price-row">
-                                <span class="price-capacity">16GB Module</span>
-                                <span class="price-value" data-base-price="18.00"><span class="price-arrow">▲</span>£18.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">32GB Module</span>
-                                <span class="price-value" data-base-price="36.00"><span class="price-arrow">▲</span>£36.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">64GB Module</span>
-                                <span class="price-value" data-base-price="74.00"><span class="price-arrow">▲</span>£74.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">128GB Module</span>
-                                <span class="price-value" data-base-price="152.00"><span class="price-arrow">▲</span>£152.00</span>
-                            </div>
-                        </div>
+                    <div style="color: rgba(255, 255, 255, 0.9); line-height: 1.8;">
+                        <p style="margin-bottom: 1rem; font-size: 1rem;">
+                            <strong style="color: #ffb347;">DDR4</strong> is the fourth generation of DDR memory technology, widely used in enterprise servers and data centers.
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ffb347;">✓</span>
+                                <strong>Speeds:</strong> 2133MHz, 2400MHz, 2666MHz, 2933MHz, 3200MHz
+                            </li>
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ffb347;">✓</span>
+                                <strong>Modules:</strong> 16GB, 32GB, 64GB, 128GB, 256GB
+                            </li>
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ffb347;">✓</span>
+                                <strong>Voltage:</strong> 1.2V (lower power consumption than DDR3)
+                            </li>
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ffb347;">✓</span>
+                                <strong>Compatibility:</strong> Intel Xeon Scalable, AMD EPYC, and older server platforms
+                            </li>
+                            <li style="margin-bottom: 0; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ffb347;">✓</span>
+                                <strong>Use Cases:</strong> Enterprise servers, workstations, data centers, virtualization
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <!-- DDR5 Card -->
+                <!-- DDR5 Information Card -->
                 <div class="price-card ddr5">
                     <div class="price-card-header">
                         <h3 class="price-card-title">DDR5 RAM</h3>
                         <span class="price-card-badge">Server Memory</span>
                     </div>
-
-                    <div class="speed-group">
-                        <div class="speed-label">All Speeds</div>
-                        <div class="price-rows">
-                            <div class="price-row">
-                                <span class="price-capacity">16GB Module</span>
-                                <span class="price-value" data-base-price="48.00"><span class="price-arrow">▲</span>£48.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">32GB Module</span>
-                                <span class="price-value" data-base-price="102.00"><span class="price-arrow">▲</span>£102.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">64GB Module</span>
-                                <span class="price-value" data-base-price="208.00"><span class="price-arrow">▲</span>£208.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">96GB Module</span>
-                                <span class="price-value" data-base-price="310.00"><span class="price-arrow">▲</span>£310.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">128GB Module</span>
-                                <span class="price-value" data-base-price="440.00"><span class="price-arrow">▲</span>£440.00</span>
-                            </div>
-                            <div class="price-row">
-                                <span class="price-capacity">256GB Module</span>
-                                <span class="price-value" data-base-price="900.00"><span class="price-arrow">▲</span>£900.00</span>
-                            </div>
-                        </div>
+                    <div style="color: rgba(255, 255, 255, 0.9); line-height: 1.8;">
+                        <p style="margin-bottom: 1rem; font-size: 1rem;">
+                            <strong style="color: #ff8c00;">DDR5</strong> is the latest generation of DDR memory, offering significantly improved performance and efficiency for modern enterprise infrastructure.
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ff8c00;">✓</span>
+                                <strong>Speeds:</strong> 4800MHz, 5200MHz, 5600MHz, 6000MHz+ (much faster than DDR4)
+                            </li>
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ff8c00;">✓</span>
+                                <strong>Modules:</strong> 16GB, 32GB, 64GB, 96GB, 128GB, 256GB
+                            </li>
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ff8c00;">✓</span>
+                                <strong>Voltage:</strong> 1.1V (more energy efficient than DDR4)
+                            </li>
+                            <li style="margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ff8c00;">✓</span>
+                                <strong>Compatibility:</strong> Latest Intel Xeon Scalable (Sapphire Rapids+), AMD EPYC Genoa+
+                            </li>
+                            <li style="margin-bottom: 0; padding-left: 1.5rem; position: relative;">
+                                <span style="position: absolute; left: 0; color: #ff8c00;">✓</span>
+                                <strong>Use Cases:</strong> High-performance computing, AI/ML workloads, modern data centers, cloud infrastructure
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-
-            <div class="ticker-footer">
-                <p class="ticker-note">Prices shown are per module. Bulk quantities may attract higher rates. All prices are subject to market conditions. Contact us for a custom quote on your specific requirements.</p>
-                <a href="#contact" class="btn btn-secondary btn-large">Get Your Quote Now</a>
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.125rem; color: var(--text-gray); margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    We purchase both DDR4 and DDR5 server RAM modules in all capacities and speeds. Contact us for a quote on your specific memory modules.
+                </p>
+                <a href="#contact" class="btn btn-secondary btn-large">Get Your Instant Quote</a>
             </div>
         </div>
     </section>
@@ -1509,10 +1551,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Cash For Kit. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="mailto:sales@cashforkit.com">sales@cashforkit.com</a>
-                <a href="tel:+441536274950">+44 (0) 1536 274950</a>
+            <div class="footer-content">
+                <p>&copy; 2024 Cash For Kit. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="mailto:sales@cashforkit.com">sales@cashforkit.com</a>
+                    <a href="tel:+441536274950">+44 (0) 1536 274950</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1532,108 +1576,6 @@
             });
         });
 
-        // Live Price Ticker - Stock Market Effect
-        (function() {
-            const priceElements = document.querySelectorAll('.price-value[data-base-price]');
-            const currentPrices = new Map();
-
-            // Initialize current prices from base prices
-            priceElements.forEach(el => {
-                const basePrice = parseFloat(el.dataset.basePrice);
-                currentPrices.set(el, basePrice);
-            });
-
-            function updateRandomPrice() {
-                // Select a random price element to update
-                const elements = Array.from(priceElements);
-                const randomIndex = Math.floor(Math.random() * elements.length);
-                const element = elements[randomIndex];
-                const basePrice = parseFloat(element.dataset.basePrice);
-                const currentPrice = currentPrices.get(element);
-
-                // Generate random percentage change (-5% to +5%)
-                const maxChange = 0.05; // 5%
-                const randomChange = (Math.random() * 2 - 1) * maxChange; // -5% to +5%
-                
-                // Calculate new price from base price with the random fluctuation
-                let newPrice = basePrice * (1 + randomChange);
-                
-                // Ensure price stays within 5% of base price
-                const minPrice = basePrice * 0.95;
-                const maxPrice = basePrice * 1.05;
-                newPrice = Math.max(minPrice, Math.min(maxPrice, newPrice));
-                
-                // Round to 2 decimal places
-                newPrice = Math.round(newPrice * 100) / 100;
-
-                // Determine direction
-                const direction = newPrice > currentPrice ? 'up' : newPrice < currentPrice ? 'down' : null;
-
-                if (direction) {
-                    // Update the price display
-                    const arrow = element.querySelector('.price-arrow');
-                    
-                    // Remove existing classes first
-                    element.classList.remove('price-up', 'price-down');
-                    arrow.classList.remove('up', 'down');
-                    
-                    // Update price text FIRST (so new price appears in colored state)
-                    const priceText = '£' + newPrice.toFixed(2);
-                    // Find the text node containing the price (it's the second child after the arrow span)
-                    if (element.childNodes.length > 1 && element.childNodes[1].nodeType === Node.TEXT_NODE) {
-                        element.childNodes[1].textContent = priceText;
-                    } else {
-                        // Alternative: find text node or update innerHTML
-                        const textNodes = Array.from(element.childNodes).filter(node => node.nodeType === Node.TEXT_NODE);
-                        if (textNodes.length > 0) {
-                            textNodes[0].textContent = priceText;
-                        } else if (element.childNodes.length > 1) {
-                            element.childNodes[1].textContent = priceText;
-                        }
-                    }
-                    
-                    // Add color classes AFTER price update (so price appears in green/red)
-                    if (direction === 'up') {
-                        element.classList.add('price-up');
-                        arrow.classList.add('up');
-                        arrow.textContent = '▲';
-                    } else {
-                        element.classList.add('price-down');
-                        arrow.classList.add('down');
-                        arrow.textContent = '▼';
-                    }
-
-                    // Store new current price
-                    currentPrices.set(element, newPrice);
-
-                    // Reset color and hide arrow after a delay
-                    setTimeout(() => {
-                        element.classList.remove('price-up', 'price-down');
-                        arrow.classList.remove('up', 'down');
-                    }, 3000);
-                }
-            }
-
-            // Update prices at random intervals (between 3000ms and 6000ms - slower)
-            function scheduleNextUpdate() {
-                const delay = Math.random() * 3000 + 3000; // 3000ms to 6000ms
-                setTimeout(() => {
-                    updateRandomPrice();
-                    scheduleNextUpdate();
-                }, delay);
-            }
-
-            // Start the ticker
-            scheduleNextUpdate();
-
-            // Also update multiple prices periodically for more activity (slower)
-            setInterval(() => {
-                const numUpdates = Math.floor(Math.random() * 2) + 1; // 1-2 updates
-                for (let i = 0; i < numUpdates; i++) {
-                    setTimeout(() => updateRandomPrice(), i * 500);
-                }
-            }, 8000);
-        })();
 
         // Brands bounce animation on scroll
         (function() {
